@@ -1,27 +1,18 @@
 <!-- Form -->
-<form *ngIf="formstate" class="d-flex flex-column" [formGroup]="commentaireCreateForm" (ngSubmit)="onSubmit()">
-    <div class="d-flex flex-column gap-2 form-group">
-        <textarea class="form-control bg-primary-subtle fst-italic w-100" type="text" formControlName="contenu"
-            placeholder="texte..." required></textarea>
-    </div>
+<div *ngIf="formstate" class="container gap-4 mt-5 d-flex flex-column justify-content-center">
 
-    <button class="btn btn-success col-3" type="submit">Créer</button>
-    <span *ngIf="errorState" class="alert alert-danger">{{error}}</span>
-</form>
-
-<section class="container gap-4 mt-5 d-flex flex-column justify-content-center">
     <div class="shadow-sm text-bg-info p-3"><h3>Création d'un commentaire</h3> </div>
 
     <form class="d-flex flex-column gap-4 " [formGroup]="commentaireCreateForm" (ngSubmit)="onSubmit()">
         <div class="d-flex flex-column gap-2 form-group">
-            <label class="bg-success-subtle fs-5" for="nom">Nom de votre commentaire ?</label>
+            <label class="bg-success-subtle fs-5" for="nom">Saisissez votre commentaire</label>
             <br>
             <br>
-
-            <input class="form-control bg-primary-subtle fst-italic" type="text" formControlName="contenu" placeholder="Nom du commentaire" required>
+            <input class="form-control bg-primary-subtle fst-italic" type="text" formControlName="nom" placeholder="commentaire" required>
         </div>  
 
-        <button class="btn btn-success col-3" type="submit">Créer</button>
+        <button class="btn btn-success w-50" type="submit" [disabled]="commentaireCreateForm.valid">Créer</button>
+        <!--<button class="btn btn-success col-3" type="submit">Créer</button>
+        <div *ngIf="errorState" class="alert alert-danger">{{error}}</div>-->
     </form>
-</section>
-    
+</div>
