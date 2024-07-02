@@ -1,8 +1,21 @@
 <!-- Form -->
-<form class="d-flex flex-column gap-4 " [formGroup]="commentaireEditForm" (ngSubmit)="onSubmit()">
+<!--<form class="d-flex flex-column gap-4 " [formGroup]="commentaireEditForm" (ngSubmit)="onSubmit()">
     <div class="d-flex flex-column gap-2 form-group">
         <input class="form-control bg-primary-subtle fst-italic" type="text" formControlName="contenu" required>
     </div>
 
     <button class="btn btn-success" type="submit">Update</button>
+</form>-->
+
+<section class="container gap-4 mt-5 d-flex flex-column justify-content-center">
+    <div class="shadow-sm text-bg-info p-3"> <h1>Modifier un commentaire</h1></div>
+<form class="d-flex flex-column gap-4" [formGroup]="commentaireEditForm" (ngSubmit)="onSubmit()">
+    <div class="d-flex flex-column gap-2 form-group">
+        <label class="bg-success-subtle fs-5" for="">Nom du commentaire à modifier</label>
+        <br>
+        <input class="form-control bg-primary-subtle fst-italic" type="text" formControlName="nom" [placeholder]="commentaire.contenu" required>
+    </div>
+
+    <button class="btn btn-success col-2" type="submit">Update</button>
 </form>
+</section>
