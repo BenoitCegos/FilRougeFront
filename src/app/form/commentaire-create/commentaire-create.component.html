@@ -1,13 +1,14 @@
-<!-- 
-<form *ngIf="formstate" class="d-flex flex-column gap-4 " [formGroup]="commentaireCreateForm" (ngSubmit)="onSubmit()">
+<!-- Form -->
+<form *ngIf="formstate" class="d-flex flex-column" [formGroup]="commentaireCreateForm" (ngSubmit)="onSubmit()">
     <div class="d-flex flex-column gap-2 form-group">
-        <textarea class="form-control bg-primary-subtle fst-italic" type="text" formControlName="contenu"
+        <textarea class="form-control bg-primary-subtle fst-italic w-100" type="text" formControlName="contenu"
             placeholder="texte..." required></textarea>
     </div>
 
     <button class="btn btn-success col-3" type="submit">Créer</button>
+    <span *ngIf="errorState" class="alert alert-danger">{{error}}</span>
 </form>
-Form -->
+
 <section class="container gap-4 mt-5 d-flex flex-column justify-content-center">
     <div class="shadow-sm text-bg-info p-3"><h3>Création d'un commentaire</h3> </div>
 
@@ -23,3 +24,4 @@ Form -->
         <button class="btn btn-success col-3" type="submit">Créer</button>
     </form>
 </section>
+    

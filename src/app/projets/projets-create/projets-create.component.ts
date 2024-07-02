@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProjetsService } from '../../Services/projets.service';
 import { Router } from '@angular/router';
 @Component({
@@ -7,21 +7,30 @@ import { Router } from '@angular/router';
   templateUrl: './projets-create.component.html',
   styleUrl: './projets-create.component.css'
 })
-export class ProjetsCreateComponent {
+export class ProjetsCreateComponent implements OnInit {
 
-  projet: FormGroup = new FormGroup({
-    nom: new FormControl(''),
-  });
+  errorState: boolean = false;
+  error: string;
 
-  constructor(private projetsService: ProjetsService, private router: Router) {
-  
+  projet: FormGroup;
+
+  constructor(private projetsService: ProjetsService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.projet = new FormGroup({
+      nom: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
+    });
+
   }
 
- 
   onSubmit() {
-    console.log(this.projet.value);
+    if (this.projet.get('nom')?.invalid) {
+      this.errorState = true;
+      this.error = "Le nom du projet est obligatoire";
+      return;
+    }
+
     this.projetsService.createProjet(this.projet.value);
-    //redirection 
     this.router.navigate(['/Projets']);
   }
 

@@ -9,6 +9,7 @@ import { ProjetsEditComponent } from './projets-edit/projets-edit.component';
 import { RouterLink, RouterLinkActive, Routes } from '@angular/router';
 import { ProjetsTableComponent } from './projets-table/projets-table.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterLink,
     CommonModule,
     ReactiveFormsModule,
+    SharedModule,
     ProjetsRoutingModule,
   ]
 })

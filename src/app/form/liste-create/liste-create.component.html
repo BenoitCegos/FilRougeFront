@@ -1,4 +1,4 @@
-<section class="container gap-4 mt-5 d-flex flex-column justify-content-center">
+<section class="container gap-4 mt-5 p-0 d-flex flex-column justify-content-center">
     <div class="shadow-sm text-bg-info p-3"><h3>Création d'une liste</h3> </div>
 
     <form class="d-flex flex-column gap-4 " [formGroup]="listeform" (ngSubmit)="OnSubmit()">
@@ -10,6 +10,8 @@
             <input class="form-control bg-primary-subtle fst-italic" type="text" formControlName="nom" placeholder="Nom de la liste" required>
         </div>  
 
-        <button class="btn btn-success col-3" type="submit">Créer</button>
+        <!-- <button class="btn btn-success col-3" type="submit">Créer</button> -->
+        <app-btn-sucess text="Create" type="submite"></app-btn-sucess>
+        <div *ngIf="errorState" class="alert alert-danger">{{error}}</div>
     </form>
 </section>

@@ -10,6 +10,7 @@ import { ProjetActionsBoardComponent } from './projet-actions-board/projet-actio
 import { FormModule } from '../form/form.module';
 import { CommentaireComponent } from './commentaire/commentaire.component';
 import { TacheModalComponent } from './tache-modal/tache-modal.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { TacheModalComponent } from './tache-modal/tache-modal.component';
     CommonModule,
     ProjetRoutingModule,
     ReactiveFormsModule,
+    SharedModule,
     FormModule,
   ],
 })

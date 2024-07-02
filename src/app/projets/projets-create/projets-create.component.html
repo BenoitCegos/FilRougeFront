@@ -8,6 +8,8 @@
 
             <input class="form-control bg-primary-subtle fst-italic" type="text" formControlName="nom" placeholder="Nom du projet" required>
 
-        <button class="btn btn-success col-2" type="submit">Créer</button>
+        <!-- <button class="btn btn-success col-2" type="submit">Créer</button> -->
+        <app-btn-submit [disableCondition]="!projet.valid" [text]="'Créer'"></app-btn-submit>
+        <div class="alert alert-warning" *ngIf="errorState">{{error}}</div>
     </form>
 </section>

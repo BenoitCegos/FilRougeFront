@@ -1,4 +1,4 @@
-<div *ngIf="commentaires" class="d-flex flex-column align-items-center gap-2">
+<div *ngIf="commentaires" class="d-flex flex-column align-items-center gap-2 w-100">
     <h3>Commentaire</h3>
     <span class="d-flex align-items-center">
         <button class="btn-close" (click)="formCreateRef.onCancel()"></button>
@@ -7,7 +7,7 @@
 
     <!-- Form -->
     <app-commentaire-create #formCreateRef [tacheId]="tacheId"></app-commentaire-create>
-    <app-commentaire-edit #formEditRef *ngIf="formEditState" [commentaire]="commentaireToEdit" (formStateEvent)="onCancel()" ></app-commentaire-edit>
+    <app-commentaire-edit *ngIf="formEditState" [commentaire]="commentaireToEdit" (formStateEvent)="onCancel()" ></app-commentaire-edit>
 
     <div *ngFor="let commentaire of commentaires">
         <p *ngIf="!formEditState" class="">{{commentaire.contenu}}</p>

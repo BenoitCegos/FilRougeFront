@@ -1,4 +1,4 @@
-<table class="table container mt-5">
+<table class="table mt-5">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -13,9 +13,10 @@
         <th scope="row">{{projet.id}}</th>
         <td><a [routerLink]="['/Projet/',projet.id]">{{projet.nom}}</a></td>
         <td>{{projet.createdAt}}</td>
-        <td>
-            <a class="btn btn-info" [routerLink]="['edit',projet.id]">Edit</a>
-            <a class="btn btn-danger" (click)="OnDelete(projet.id)">Delete</a>
+        <td class="d-flex gap-2">
+            <a class="btn btn-info hvr-grow" [routerLink]="['edit',projet.id]">Edit</a>
+            <!-- <button class="btn btn-danger" (click)="OnDelete(projet.id)">Delete</button> -->
+            <app-btn-danger text="Delete" (onClickEvent)="OnDelete(projet.id)"></app-btn-danger>
         </td>
       </tr>
       

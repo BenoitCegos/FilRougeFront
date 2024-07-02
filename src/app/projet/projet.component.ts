@@ -8,18 +8,18 @@ import { ListesService } from '../Services/listes.service';
   selector: 'app-projet',
   templateUrl: './projet.component.html',
   styleUrl: './projet.component.css'
-})  
+})
 export class ProjetComponent implements OnInit {
 
   projet: Projet;
 
-  constructor(private route: ActivatedRoute, private ProjetsService: ProjetsService) { 
+  constructor(private route: ActivatedRoute, private ProjetsService: ProjetsService) {
   }
 
   //form
 
   ngOnInit() {
-    
+
     this.route.params.subscribe(params => {
 
       this.ProjetsService.getProjetById(params['id']).subscribe(
@@ -27,12 +27,5 @@ export class ProjetComponent implements OnInit {
       );
     });
   }
-
-
-  
-
-
-
-
 
 }

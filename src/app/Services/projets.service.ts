@@ -39,6 +39,7 @@ export class ProjetsService {
     this.http.post<Projet>(`${this.url}/projets`, projet).subscribe(
       () => this.getProjets()
     );
+    return 
   }
 
   updateProjet(id: number, projet: Projet) {

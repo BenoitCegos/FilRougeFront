@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormOverlayComponent } from './form-overlay/form-overlay.component';
 import { CommentaireCreateComponent } from './commentaire-create/commentaire-create.component';
 import { CommentaireEditComponent } from './commentaire-edit/commentaire-edit.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -24,6 +25,7 @@ import { CommentaireEditComponent } from './commentaire-edit/commentaire-edit.co
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
 
   exports: [
